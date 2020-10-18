@@ -40,7 +40,7 @@ int main()
 
     //Configuracao do PWM
         //Temporizador 1
-        TCCR1A = (1<<WGM11)|(1<<COM1B1);
+        TCCR1A = (1<<WGM11) | (1<<COM1B1);
         TCCR1B = (1<<CS11) | (1<<WGM13) | (1<<WGM12);
 
         ICR1 = 3999;
@@ -48,7 +48,7 @@ int main()
 
         //Temporizador 2
         TCCR2A = (1<<COM2A1) | (1<<WGM21) | (1<<WGM20) | (1<<COM2B1);
-        TCCR2B = (1<<CS20)|(1<<CS21);
+        TCCR2B = (1<<CS20) | (1<<CS21);
 
         //Saidas
         OCR2A = 0;
@@ -56,7 +56,7 @@ int main()
 
     //Configuracao do Sensor Ultrassonico
         //Temporizador 0
-        TIMSK0=(1<<TOIE0);
+        TIMSK0 = (1<<TOIE0);
 
         //Interrupcoes
             //Interrupcao PB0
@@ -96,21 +96,21 @@ int main()
     {
         if(tst_bit(Sinal, 0))
         {
-            Sinal&=254;
+            Sinal &= 254;
 
             if(!tst_bit(ADMUX, 1) && !tst_bit(ADMUX, 0))
             {
 
-                Temp=ADC*0.48876;
+                Temp = ADC * 0.48876;
 
-                if(Temp<30)
+                if(Temp < 30)
                 {
-                    OCR2A=0;
+                    OCR2A = 0;
                 }
 
-                else if(Temp>=30 && Temp<=60)
+                else if(Temp >= 30 && Temp <= 60)
                 {
-                    OCR2A=((255*Temp)/60);
+                    OCR2A = ((255 * Temp) / 60);
                 }
 
                 else
@@ -125,16 +125,16 @@ int main()
             {
 
                 Umidade = 100;
-                Umidade -= ADC*0.09775;
+                Umidade -= ADC * 0.09775;
 
                 if(tst_bit(PIND,PD2) || Umidade >= 50)
                 {
-                    OCR2B=0;
+                    OCR2B = 0;
                 }
 
-                else if(Umidade<50)
+                else if(Umidade < 50)
                 {
-                    OCR2B=((255*80-255*Umidade)/80);
+                    OCR2B=((255 * 80 - 255 * Umidade) / 80);
                 }
 
                 ADMUX = 0b01000010;
