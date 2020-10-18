@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1601766628 source:c:\users\mathe\onedrive\desktop\codigoproj\projetofinal\lcd.c
+	"LCD.h"
+
+1601575560 c:\users\mathe\onedrive\desktop\codigoproj\projetofinal\lcd.h
+	"def_principais.h"
+
+1473697696 c:\users\mathe\onedrive\desktop\codigoproj\projetofinal\def_principais.h
+	<avr/io.h>
+	<util/delay.h>
+	<avr/pgmspace.h>
+
+1602982053 source:c:\users\mathe\onedrive\desktop\codigoproj\projetofinal\main.c
+	<avr/io.h>
+	<avr/interrupt.h>
+	<util/delay.h>
+	"def_principais.h"
+	"LCD.h"
+	"USART.h"
+
+1600630276 c:\users\mathe\onedrive\desktop\codigoproj\projetofinal\usart.h
+	"def_principais.h"
+
+1600631208 source:c:\users\mathe\onedrive\desktop\codigoproj\projetofinal\usart.c
+	"USART.h"
+
